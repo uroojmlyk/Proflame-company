@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Pro Flame Gas Services</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      color: #111;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      border: 1px solid #222;
+      background: #eee;
+    }
+
+    /* =========================
+       CONSTRUCTION
+    ========================= */
+
+    .construction {
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #d3d3d3;
+      border-bottom: 1px solid #222;
+      font-size: 21px;
+      font-weight: 700;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    .header-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      min-height: 205px;
+      border-bottom: 1px solid #222;
+    }
+
+    .header-box {
+      background: #eee;
+      min-width: 0;
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .header-box:not(:first-child) {
+      border-left: 1px solid #222;
+    }
+
+    .logo-wrap {
+      width: 100%;
+    }
+
+    .logo {
+      display: block;
+      width: 88%;
+      max-width: 440px;
+      height: auto;
+      max-height: none;
+      object-fit: contain;
+      margin: 0 auto 8px;
+    }
+
+    .coverage-text {
+      font-size: 20px;
+      font-weight: 700;
+      margin-top: 4px;
+    }
+
+    .header-product-image {
+      display: block;
+      width: 100%;
+      max-width: 220px;
+      height: 155px;
+      object-fit: contain;
+      margin: 0 auto;
+    }
+
+    .contact-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .contact-title {
+      font-size: 21px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .phone {
+      color: #d90000;
+      font-size: 29px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      white-space: nowrap;
+    }
+
+    .email {
+      font-size: 19px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    /* =========================
+       PRICING
+    ========================= */
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-bottom: 1px solid #222;
+    }
+
+    .pricing-card {
+      min-width: 0;
+      min-height: 225px;
+      padding: 8px 10px 10px;
+      background: #eee;
+      text-align: center;
+      border-right: 1px solid #222;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .pricing-card:last-child {
+      border-right: 0;
+    }
+
+    .pricing-image {
+      width: 100%;
+      max-width: 175px;
+      height: 120px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto 5px;
+    }
+
+    .pricing-name {
+      min-height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 17px;
+      line-height: 1.15;
+      font-weight: 700;
+    }
+
+    .price {
+      color: #df0000;
+      font-size: 19px;
+      font-weight: 700;
+      margin: 4px 0 9px;
+    }
+
+    .book-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      min-height: 36px;
+      padding: 6px 15px;
+
+      background: #df0000;
+      color: #fff;
+
+      border-radius: 9px;
+      text-decoration: none;
+
+      font-size: 16px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .book-button:hover {
+      background: #b90000;
+    }
+
+    /* =========================
+       INFORMATION
+    ========================= */
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid #222;
+    }
+
+    .info-box {
+      min-width: 0;
+      min-height: 185px;
+      padding: 10px 22px;
+      background: #eee;
+    }
+
+    .info-box:nth-child(odd) {
+      border-right: 1px solid #222;
+    }
+
+    .info-box:nth-child(1),
+    .info-box:nth-child(2) {
+      border-bottom: 1px solid #222;
+    }
+
+    .info-heading {
+      margin: 0 0 12px;
+      text-align: center;
+
+      font-size: 20px;
+      line-height: 1.18;
+      font-weight: 700;
+    }
+
+    .info-text {
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.22;
+      font-weight: 500;
+    }
+
+    /* =========================
+       BOOKING
+    ========================= */
+
+    .booking-title {
+      height: 34px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: #d3d3d3;
+      border-bottom: 1px solid #222;
+
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .booking-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: #eee;
+      border-bottom: 1px solid #222;
+    }
+
+    .booking-column {
+      padding: 10px 24px;
+      min-width: 0;
+    }
+
+    .booking-column:first-child {
+      border-right: 1px solid #222;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 130px minmax(0, 1fr);
+      align-items: center;
+
+      gap: 8px;
+      margin-bottom: 7px;
+    }
+
+    .form-row label {
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      min-width: 0;
+
+      border: 1px solid #aaa;
+      border-radius: 3px;
+
+      padding: 6px 8px;
+
+      background: #fff;
+      color: #111;
+
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+    }
+
+    input,
+    select {
+      height: 28px;
+    }
+
+    textarea {
+      height: 65px;
+      resize: none;
+    }
+
+    .booking-column:nth-child(2) .form-row {
+      grid-template-columns: 160px minmax(0, 1fr);
+    }
+
+    .submit-row {
+      display: flex;
+      justify-content: center;
+      margin-top: 3px;
+    }
+
+    .submit-button {
+      width: 90%;
+      min-height: 34px;
+
+      border: 0;
+      border-radius: 10px;
+
+      background: #df0000;
+      color: #fff;
+
+      font-size: 17px;
+      font-weight: 700;
+
+      cursor: pointer;
+    }
+
+    .submit-button:hover {
+      background: #b90000;
+    }
+
+    /* =========================
+       GALLERY
+    ========================= */
+
+    .gallery-title {
+      height: 32px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: #d3d3d3;
+      border-bottom: 1px solid #222;
+
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-bottom: 1px solid #222;
+    }
+
+    .gallery-item {
+      min-width: 0;
+      padding: 6px 8px 5px;
+
+      background: #eee;
+      text-align: center;
+
+      border-right: 1px solid #222;
+      border-bottom: 1px solid #222;
+    }
+
+    .gallery-item:nth-child(3n) {
+      border-right: 0;
+    }
+
+    .gallery-image {
+      display: block;
+
+      width: 100%;
+      height: 100px;
+
+      object-fit: cover;
+      object-position: center;
+
+      margin-bottom: 3px;
+    }
+
+    .gallery-caption {
+      min-height: 18px;
+
+      font-size: 13px;
+      line-height: 1.15;
+      font-weight: 700;
+    }
+
+    /* =========================
+       BOTTOM
+    ========================= */
+
+    .bottom-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .bottom-box {
+      min-width: 0;
+      min-height: 205px;
+
+      padding: 10px 22px;
+
+      background: #eee;
+      border-right: 1px solid #222;
+    }
+
+    .bottom-box:last-child {
+      border-right: 0;
+    }
+
+    .bottom-heading {
+      text-align: center;
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .bottom-text {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.32;
+    }
+
+    .testimonial {
+      margin-bottom: 9px;
+    }
+
+    /* =========================
+       TABLET
+    ========================= */
+
+    @media (max-width: 900px) {
+
+      .header-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .header-grid .header-box:first-child {
+        grid-column: 1 / -1;
+        min-height: 180px;
+      }
+
+      .header-grid .header-box:nth-child(3) {
+        border-left: 1px solid #222;
+      }
+
+      .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .pricing-card:nth-child(2) {
+        border-right: 0;
+      }
+
+      .pricing-card:nth-child(3),
+      .pricing-card:nth-child(4) {
+        border-top: 1px solid #222;
+      }
+
+      .pricing-card:nth-child(4) {
+        border-right: 0;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .info-box,
+      .info-box:nth-child(odd) {
+        border-right: 0;
+        border-bottom: 1px solid #222;
+      }
+
+      .info-box:last-child {
+        border-bottom: 0;
+      }
+
+      .booking-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .booking-column:first-child {
+        border-right: 0;
+        border-bottom: 1px solid #222;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .gallery-item:nth-child(3n) {
+        border-right: 1px solid #222;
+      }
+
+      .gallery-item:nth-child(2n) {
+        border-right: 0;
+      }
+
+      .bottom-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .bottom-box {
+        border-right: 0;
+        border-bottom: 1px solid #222;
+      }
+
+      .bottom-box:last-child {
+        border-bottom: 0;
+      }
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 600px) {
+
+      .construction {
+        font-size: 17px;
+      }
+
+      .header-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .header-grid .header-box:first-child {
+        grid-column: auto;
+      }
+
+      .header-box,
+      .header-grid .header-box:nth-child(3) {
+        border-left: 0;
+        border-bottom: 1px solid #222;
+      }
+
+      .header-box:last-child {
+        border-bottom: 0;
+      }
+
+      .logo {
+        width: 95%;
+        max-width: 420px;
+      }
+
+      .coverage-text {
+        font-size: 17px;
+      }
+
+      .phone {
+        font-size: 25px;
+      }
+
+      .email {
+        font-size: 16px;
+      }
+
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pricing-card,
+      .pricing-card:nth-child(2),
+      .pricing-card:nth-child(3),
+      .pricing-card:nth-child(4) {
+        border-right: 0;
+        border-bottom: 1px solid #222;
+      }
+
+      .pricing-card:last-child {
+        border-bottom: 0;
+      }
+
+      .form-row,
+      .booking-column:nth-child(2) .form-row {
+        grid-template-columns: 1fr;
+        gap: 3px;
+      }
+
+      .submit-button {
+        width: 100%;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-item,
+      .gallery-item:nth-child(2n),
+      .gallery-item:nth-child(3n) {
+        border-right: 0;
+      }
+
+      .gallery-image {
+        height: 180px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<main class="page">
+
+  <!-- =========================
+       CONSTRUCTION
+  ========================== -->
+
+  <div class="construction">
+    Website under Construction
+  </div>
+
+
+  <!-- =========================
+       HEADER
+       3 COLUMNS
+  ========================== -->
+
+  <section class="header-grid">
+
+    <!-- LEFT: LOGO -->
+
+    <div class="header-box">
+
+      <div class="logo-wrap">
+
+        <img
+          src="/logo-banner.jpg"
+          alt="Pro Flame Gas Services"
+          class="logo"
+        >
+
+        <div class="coverage-text">
+          Covering BA, BS, GL, SN areas
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- MIDDLE: BOILER IMAGE -->
+
+    <div class="header-box">
+
+      <img
+        src="/fire1.jfif"
+        alt="Pro Flame boiler service"
+        class="header-product-image"
+      >
+
+    </div>
+
+
+    <!-- RIGHT: CONTACT -->
+
+    <div class="header-box contact-box">
+
+      <div>
+
+        <div class="contact-title">
+          Call/Text/Whatsapp
+        </div>
+
+        <div class="phone">
+          07833 722922
+        </div>
+
+        <div class="email">
+          info@proflamegas.co.uk
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       PRICING
+  ========================== -->
+
+  <section class="pricing-grid">
+
+    <div class="pricing-card">
+
+      <img
+        src="/fire2.jfif"
+        alt="Emergency callout"
+        class="pricing-image"
+      >
+
+      <div class="pricing-name">
+        1 Hr callout/Sameday/24 Hr
+      </div>
+
+      <div class="price">
+        £230 inc VAT
+      </div>
+
+      <a href="#booking" class="book-button">
+        Book 1Hr/Sameday
+      </a>
+
+    </div>
+
+
+    <div class="pricing-card">
+
+      <img
+        src="/fire3.jfif"
+        alt="Next day service"
+        class="pricing-image"
+      >
+
+      <div class="pricing-name">
+        Next day 8am-8pm 7days
+      </div>
+
+      <div class="price">
+        £172 inc VAT
+      </div>
+
+      <a href="#booking" class="book-button">
+        Book Nextday Response
+      </a>
+
+    </div>
+
+
+    <div class="pricing-card">
+
+      <img
+        src="/fire4.jfif"
+        alt="Routine service"
+        class="pricing-image"
+      >
+
+      <div class="pricing-name">
+        Routine Service, Safety Check
+      </div>
+
+      <div class="price">
+        £95 inc VAT
+      </div>
+
+      <a href="#booking" class="book-button">
+        Book 3-5 day Response
+      </a>
+
+    </div>
+
+
+    <div class="pricing-card">
+
+      <img
+        src="/fire5.jfif"
+        alt="VIP warranty service"
+        class="pricing-image"
+      >
+
+      <div class="pricing-name">
+        VIP/Warranty/OAP/Other
+      </div>
+
+      <div class="price">
+        £65 plus VAT
+      </div>
+
+      <a href="#booking" class="book-button">
+        Book VIP/OAP Response
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       INFORMATION
+  ========================== -->
+
+  <section class="info-grid">
+
+    <div class="info-box">
+
+      <h2 class="info-heading">
+        Fast Response Emergency Plumbers &amp; Gas Engineers.
+        <br>
+        Guaranteed 98% first time fix rate!
+      </h2>
+
+      <p class="info-text">
+        Local based Emergency Plumbers and Gas Engineers with over
+        1,000 Reviews.
+        <br>
+        Offering Same Day service with an emergency response for your
+        gas and plumbing needs.
+        <br>
+        With engineers available in as little as 1 hour.
+        No matter the time, our expert plumbers will professionally
+        diagnose and resolve the problem or make safe any potential
+        harmful situation.
+      </p>
+
+    </div>
+
+
+    <div class="info-box">
+
+      <h2 class="info-heading">
+        Covering all Oil, LPG &amp; Domestic Appliances
+        <br><br>
+        Service, Repair, Safety Checks and installs.
+      </h2>
+
+    </div>
+
+
+    <div class="info-box">
+
+      <h2 class="info-heading">
+        Customer Satisfaction guaranteed
+        <br>
+        1 Year Warranty on all works completed
+      </h2>
+
+      <p class="info-text">
+        We're not satisfied until you are. We are committed to exceeding
+        your expectations with every job, from the initial contact to the
+        final cleanup. Our focus on customer satisfaction ensures a
+        positive and stress-free experience. We stand behind our work
+        and are dedicated to resolving any issues promptly and effectively.
+      </p>
+
+    </div>
+
+
+    <div class="info-box">
+
+      <h2 class="info-heading">
+        Covering the SouthWest
+      </h2>
+
+      <p class="info-text">
+        Based in Filton by the M5/M4 Interchange, Pro Flame is perfectly
+        located to reach you with our team of highly qualified and
+        experienced Gas Safe registered engineers, we can ensure the right
+        appliance is fitted in your property with the best warranty
+        available and in compliance with the relevant regulations. We are
+        happy to attend your property to carry out a home survey and offer
+        you a fixed price quote.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       BOOKING FORM
+  ========================== -->
+
+  <section id="booking">
+
+    <div class="booking-title">
+      Online Query/Booking Form
+    </div>
+
+    <form>
+
+      <div class="booking-grid">
+
+        <!-- LEFT -->
+
+        <div class="booking-column">
+
+          <div class="form-row">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName">
+          </div>
+
+          <div class="form-row">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName">
+          </div>
+
+          <div class="form-row">
+            <label for="phoneInput">Phone Number</label>
+            <input type="tel" id="phoneInput" name="phone">
+          </div>
+
+          <div class="form-row">
+            <label for="emailInput">Email</label>
+            <input type="email" id="emailInput" name="email">
+          </div>
+
+          <div class="form-row">
+            <label for="postcode">Postcode</label>
+            <input type="text" id="postcode" name="postcode">
+          </div>
+
+          <div class="form-row">
+            <label for="house">House/Flat Number</label>
+            <input type="text" id="house" name="house">
+          </div>
+
+          <div class="form-row">
+            <label for="service">Service</label>
+
+            <select id="service" name="service">
+
+              <option value="">
+                Select service
+              </option>
+
+              <option>
+                Emergency Callout
+              </option>
+
+              <option>
+                Boiler Service
+              </option>
+
+              <option>
+                Boiler Repair
+              </option>
+
+              <option>
+                Boiler Installation
+              </option>
+
+              <option>
+                Plumbing
+              </option>
+
+              <option>
+                Gas Appliance
+              </option>
+
+              <option>
+                LPG Service
+              </option>
+
+              <option>
+                Oil Service
+              </option>
+
+            </select>
+
+          </div>
+
+        </div>
+
+
+        <!-- RIGHT -->
+
+        <div class="booking-column">
+
+          <div class="form-row">
+
+            <label for="manufacturer">
+              Appliance Manufacturer
+            </label>
+
+            <input
+              type="text"
+              id="manufacturer"
+              name="manufacturer"
+              placeholder="Worcester Bosch, Vaillant, Baxi etc."
+            >
+
+          </div>
+
+
+          <div class="form-row">
+
+            <label for="model">
+              Appliance Model
+            </label>
+
+            <input
+              type="text"
+              id="model"
+              name="model"
+              placeholder="Greenstar, EcoTec, DuoTec, etc."
+            >
+
+          </div>
+
+
+          <div class="form-row">
+
+            <label for="fault">
+              Description of fault (if faulty)
+            </label>
+
+            <textarea
+              id="fault"
+              name="fault"
+              placeholder="No Hotwater, F75 Fault code etc."
+            ></textarea>
+
+          </div>
+
+
+          <div class="form-row">
+
+            <label for="fuel">
+              Fuel Type
+            </label>
+
+            <select id="fuel" name="fuel">
+
+              <option>
+                Natural Gas
+              </option>
+
+              <option>
+                LPG
+              </option>
+
+              <option>
+                Oil
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="submit-row">
+
+            <button
+              type="submit"
+              class="submit-button"
+            >
+              Submit Query/Book Appointment
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </form>
+
+  </section>
+
+
+  <!-- =========================
+       GALLERY
+  ========================== -->
+
+  <section>
+
+    <div class="gallery-title">
+      Testimonials, About us and our work
+    </div>
+
+
+    <div class="gallery-grid">
+
+      <div class="gallery-item">
+
+        <img
+          src="/fire6.jfif"
+          alt="New Install in Highbridge TA8"
+          class="gallery-image"
+        >
+
+        <div class="gallery-caption">
+          New Install in Highbridge TA8
+        </div>
+
+      </div>
+
+
+      <div class="gallery-item">
+
+        <img
+          src="/fire7.jfif"
+          alt="Fault Finding in Gloucester GL4"
+          class="gallery-image"
+        >
+
+        <div class="gallery-caption">
+          Fault Finding in Gloucester GL4
+        </div>
+
+      </div>
+
+
+      <div class="gallery-item">
+
+        <img
+          src="/fire8.jfif"
+          alt="Upgrade Boiler In Swindon SN12"
+          class="gallery-image"
+        >
+
+        <div class="gallery-caption">
+          Upgrade Boiler In Swindon SN12
+        </div>
+
+      </div>
+
+
+      <div class="gallery-item">
+
+        <img
+          src="/fire9.jfif"
+          alt="Boiler Service in a Church in BA2"
+          class="gallery-image"
+        >
+
+        <div class="gallery-caption">
+          Boiler Service in a Church in BA2
+        </div>
+
+      </div>
+
+
+      <div class="gallery-item">
+
+        <img
+          src="/fire10.jfif"
+          alt="Boiler Repair in Yeovil BA4"
+          class="gallery-image"
+        >
+
+        <div class="gallery-caption">
+          Boiler Repair in Yeovil BA4
+        </div>
+
+      </div>
+
+
+      <div class="gallery-item">
+
+        <img
+          src="/fire1.jfif"
+          alt="Boiler swap in Bristol BS5"
+          class="gallery-image"
+        >
+
+        <div class="gallery-caption">
+          Boiler swap in Bristol BS5
+        </div>
+
+      </div>
+
+
+      <div class="gallery-item">
+
+        <img
+          src="/fire2.jfif"
+          alt="Hob Install in BA22"
+          class="gallery-image"
+        >
+
+        <div class="gallery-caption">
+          Hob Install in BA22
+        </div>
+
+      </div>
+
+
+      <div class="gallery-item">
+
+        <img
+          src="/fire3.jfif"
+          alt="Safety Check in Dundry BS14"
+          class="gallery-image"
+        >
+
+        <div class="gallery-caption">
+          Safety Check in Dundry BS14
+        </div>
+
+      </div>
+
+
+      <div class="gallery-item">
+
+        <img
+          src="/fire4.jfif"
+          alt="Cooker install in Bristol BS34"
+          class="gallery-image"
+        >
+
+        <div class="gallery-caption">
+          Cooker install in Bristol BS34
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       BOTTOM
+  ========================== -->
+
+  <section class="bottom-grid">
+
+    <div class="bottom-box">
+
+      <div class="bottom-heading">
+        Testimonials:
+      </div>
+
+      <div class="bottom-text">
+
+        <div class="testimonial">
+          Great service, Highly recommended. Alan. Swindon.
+        </div>
+
+        <div class="testimonial">
+          Five Stars, First Class. Dave. Taunton.
+        </div>
+
+        <div class="testimonial">
+          Reliable, Professional. Sue. Corsham.
+        </div>
+
+        <div class="testimonial">
+          Friendly, reasonably priced. Jane. Kingswood.
+        </div>
+
+        <div class="testimonial">
+          Quick response and punctual. Beverly. Gloucester.
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="bottom-box">
+
+      <div class="bottom-heading">
+        Acreditations:
+      </div>
+
+      <p class="bottom-text">
+        Worcester Bosch Trained and Approved.
+        <br>
+        Vaillant Accredited Installer.
+        <br>
+        LPG qualified.
+        <br>
+        Social Housing Experience.
+        <br>
+        Letting/Estate Agent Contractor.
+        <br>
+        CRB Checked Engineers.
+        <br>
+        Gassafe Registered Oil Technicians.
+        <br>
+        Oftec Registered.
+        <br>
+        Ex British Gas.
+        <br>
+        Waste Carriers License.
+        <br>
+        25 Yrs Plumbing Experience.
+      </p>
+
+    </div>
+
+
+    <div class="bottom-box">
+
+      <div class="bottom-heading">
+        Vat Registration No: 86445775
+      </div>
+
+      <p class="bottom-text" style="text-align:center;">
+
+        Email: info@proflamegas.co.uk
+
+        <br><br>
+
+        admin@proflamegas.co.uk
+
+        <br><br>
+
+        Call/Txt/WhatsApp: 07833722922
+
+      </p>
+
+    </div>
+
+  </section>
+
+</main>
+
+</body>
+</html>
